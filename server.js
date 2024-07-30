@@ -16,10 +16,11 @@ app.get("/", async (req, res) => {
 
 mongoose.connection.on("connected", () => {
     console.log(`Connected to MongoDB ${mongoose.connection.name}.`);
+    app.listen(3000, () => {
+        console.log("Listening on port 3000");
+    });
+    
 });
 
 
-app.listen(3000, () => {
-    console.log("Listening on port 3000");
-});
 
